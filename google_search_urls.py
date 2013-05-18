@@ -20,7 +20,7 @@ class GooglePage:
 		page = urllib2.urlopen(req)
 		html = page.read()
 		self.root = lxml.html.document_fromstring(html).getroottree().getroot()
-		results = self.root.cssselect('ol li a.l')
+		results = self.root.cssselect('h3.r a')
 		for item in results:
 			print item.get('href')
 	
